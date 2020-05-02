@@ -5,14 +5,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class ConstructorBasedController {
-    private GreetingService greetingService;
+public class I18nController  {
 
-    public ConstructorBasedController(@Qualifier("constructorGreetingServiceImpl") GreetingService greetingService) {
+    private  final GreetingService greetingService;
+
+    public I18nController(@Qualifier(value = "i18Service") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
-    public String getGreetings() {
-        return greetingService.sayGreeting();
+    public String sayHello(){
+
+    return greetingService.sayGreeting();
     }
 }

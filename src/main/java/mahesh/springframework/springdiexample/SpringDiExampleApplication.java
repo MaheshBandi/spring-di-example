@@ -1,9 +1,6 @@
 package mahesh.springframework.springdiexample;
 
-import mahesh.springframework.springdiexample.controller.ConstructorBasedController;
-import mahesh.springframework.springdiexample.controller.MyController;
-import mahesh.springframework.springdiexample.controller.PropertyInjectedController;
-import mahesh.springframework.springdiexample.controller.SetterBasedInjectedController;
+import mahesh.springframework.springdiexample.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -28,5 +25,8 @@ public class SpringDiExampleApplication {
 		ConstructorBasedController constructorBasedController = context.getBean("constructorBasedController",ConstructorBasedController.class);
 		System.out.println("ConstructorBasedController-"+constructorBasedController.getGreetings());
 
+		//Primary Based Injection
+		PrimaryConstructorBasedController primaryConstructorBasedController = context.getBean("primaryConstructorBasedController",PrimaryConstructorBasedController.class);
+		System.out.println(primaryConstructorBasedController.getGreetings());
 	}
 }

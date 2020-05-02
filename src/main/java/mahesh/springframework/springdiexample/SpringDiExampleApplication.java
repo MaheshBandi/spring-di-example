@@ -28,5 +28,8 @@ public class SpringDiExampleApplication {
 		//Primary Based Injection
 		PrimaryConstructorBasedController primaryConstructorBasedController = context.getBean("primaryConstructorBasedController",PrimaryConstructorBasedController.class);
 		System.out.println(primaryConstructorBasedController.getGreetings());
+
+		I18nController i18nController = context.getBean("i18nController",I18nController.class);
+		System.out.println(i18nController.sayHello());
 	}
 }
